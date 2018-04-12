@@ -9,11 +9,6 @@
 ```html
    <script src="browser.js"></script>
 ```
-
-npm安装
-```bash
-  npm install browserStorage
-```
 ### 默认使用
 不指定存储方式时，优先使用websql,如果浏览器不支持websql，则降级使用indexdb
 ```javascript
