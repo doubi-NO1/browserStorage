@@ -64,7 +64,7 @@
 
 ## 示例
 ### 在线示例
-[查看](http://browserstorage.demos.party/test.test.html)
+[查看](http://browserstorage.demos.party/test/test.html)
 
 ### 本地查看
 ```bash
