@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>BrowserStorageTest</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="../core/browserStorage.js"></script>
 </head>
+
 <body>
-    
+  <div>
+    <p>
+      <span>default:</span>
+      <input id="defadivtValue" type="text" />
+      <button onclick="defadivtStorageClick()">添加到default</button>
+    </p>
+
+    <p>
+      <span>indexDb:</span>
+      <input id="indexDbValue" type="text" />
+      <button onclick="indexDbClick()">添加到indexDb</button>
+    </p>
+
+    <p>
+      <span>localStorage:</span>
+      <input id="localValue" type="text" />
+      <button onclick="localClick()">添加到localStorage</button>
+    </p>
+
+    <p>
+      <span>sessionStorage:</span>
+      <input id="sessionValue" type="text" />
+      <button onclick="sessionClick()">添加到sessionStorage</button>
+    </p>
+
+    <p>
+      <span>内存：</span>
+      <input id="memoryValue" type="text" />
+      <button onclick="memoryClick()">添加到内存</button>
+    </p>
+
+  </div>
+  <div>
+    <button onclick="printClick()">打印结果(请打开console查看)</button>
+    <button onclick="clearAll()">清除全部</button>
+  </div>
 </body>
+
 </html>
 
 <script type="text/javascript">
-  
+  var storage = new BrowserStorage();
+  //indexdb 
+  var indexdb = new BrowserStorage('indexdb');
+  //localStorage 
+  var local = new BrowserStorage('local');
+  //sessionStorage
+  var session = new BrowserStorage('session');
+  //内存 
+  var memory = new BrowserStorage('memory');
+  //websql 
+  var websql = new BrowserStorage('websql');
+
+  function defadivtStorageClick() {
+    var value = document.getElementById('defadivtValue').value;
+    storage.put('storage', value);
+  }
+
+  function indexDbClick() {
+    var value = document.getElementById('indexDbValue').value;
+    indexdb.put('storage', value);
+  }
+
+  function localClick() {
+    var value = document.getElementById('localValue').value;
+    local.put('storage', value);
+  }
+
+  function sessionClick() {
+    var value = document.getElementById('sessionValue').value;
+    session.put('storage', value);
+  }
+
+  function memoryClick() {
+    var value = document.getElementById('memoryValue').value;
+    memory.put('storage', value);
+  }
+
+  function printClick() {
+    storage.get('storage').then(function (res) {
+      console.log(res);
+    });
+    indexdb.get('storage').then(function (res) {
+      console.log(res);
+    });
+    //localStorage 
+    local.get('storage').then(function (res) {
+      console.log(res);
+    });
+    //sessionStorage
+    session.get('storage').then(function (res) {
+      console.log(res);
+    });
+    //内存 
+    memory.get('storage').then(function (res) {
+      console.log(res);
+    });
+    //websql 
+    websql.get('storage').then(function (res) {
+      console.log(res);
+    });
+  }
+
+  function clearAll() {
+    Promise.all([
+      storage.del("storage"),
+      indexdb.del("storage"),
+      local.del("storage"),
+      session.del("storage"),
+      memory.del("storage"),
+      websql.del("storage")
+    ]).then(function () {
+      alert('清除成功!');
+    });
+  }
 </script>
