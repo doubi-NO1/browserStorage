@@ -67,7 +67,7 @@ npm安装
   })
 ```
 
-## 实例
+## 示例
 ### 在线示例
 [查看](http://browserstorage.demos.party/test.test.html)
 
