@@ -66,6 +66,20 @@ npm安装
     console.log(res);
   })
 ```
+
+## 实例
+### 在线示例
+[查看](http://browserstorage.demos.party/test.test.html)
+
+### 本地查看
+```bash
+  git clone https://github.com/doubi-NO1/browserStorage.git
+  
+  cd browswerStorage
+
+  node server.js
+```
+打开浏览器输入地址 [http://localhost:9090/test/test.html](http://localhost:9090/test/test.html)查看效果
 注意：BrowserStorage全部api均为异步Promise方式
 ### 协议
 MIT
