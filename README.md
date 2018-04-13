@@ -75,6 +75,7 @@
   node server.js
 ```
 打开浏览器输入地址 [http://localhost:9090/test/test.html](http://localhost:9090/test/test.html)查看效果
+
 注意：BrowserStorage全部api均为异步Promise方式
 ### 协议
 MIT
