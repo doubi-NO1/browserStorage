@@ -1,5 +1,5 @@
 {
-  "name": "browserstorage",
+  "name": "browsers-storage",
   "version": "1.0.0",
   "description": "浏览器本地存储封装",
   "main": "index.js",
