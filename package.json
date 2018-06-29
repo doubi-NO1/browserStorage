@@ -1,0 +1,30 @@
+{
+  "name": "browserstorage",
+  "version": "1.0.0",
+  "description": "浏览器本地存储封装",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "files":[
+    "index.js",
+    "core"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doubi-NO1/browserStorage.git"
+  },
+  "keywords": [
+    "storage"
+  ],
+  "author": "8-shen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doubi-NO1/browserStorage/issues"
+  },
+  "homepage": "https://github.com/doubi-NO1/browserStorage#readme"
+}
